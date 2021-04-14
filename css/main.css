@@ -3,11 +3,32 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Comic Neue', cursive;
 }
 
 body {
-    font-family: 'Comic Neue', cursive;
+    background: #888;
+    color: #fff;
 }
 
 /* LAYOUT */
 
+.app {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+.add-todo {
+    width: 100%;
+}
+
+/* TODO LIST */
+
+.todos li {
+    display: flex;
+    justify-content: space-between;
+}
