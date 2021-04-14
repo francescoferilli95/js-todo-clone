@@ -45,31 +45,55 @@ $(document).ready(function(){
 
     for(var i = 0; i < toDoItems.length; i++) {
 
-        // template
+        // TEMPLATE
         var toDo = toDoItems[i];
         var item = template.clone();
         item.find('.text').text(toDo.text);
 
-        // check if completed
+        // CHECK IF COMPLETED
         /* add later when styles will be done
         if(toDo.completed) {
             item.find('.text').toggleClass('completed');
         }
         */
-        // add to the list
+        // ADD TO THE LIST
         list.append(item);
     }
 
+    // 2.
 
+    newInput.keyup(function(e){
+        // check keycode on input
+        console.log(e.which);
 
+        if(e.which === 13) {
+            var text = newInput.val().trim();
 
+            if(text !== '') {
+                console.log(text);
 
+                // TEMPLATE
+                var item = template.clone();
+                item.find('.text').text(text);
+                list.append(item);
+                // RESET
+                newInput.val('');
+            }
+        }
+    });
 
+    // 3.
 
+    $('body').on('click', '.todos li i', function(){
+        $(this).parent().remove();
+    });
 
-
-
-
+    // 4.
+    /* add later when styles will be done
+    $('body').on('click', '.todos li .text', function(){
+        $(this).toggleClass('completed');
+    })
+    */
 
     // END OF DOC READY
 });
