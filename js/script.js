@@ -1,7 +1,6 @@
 $(document).ready(function(){
 
-
-    /**
+    /**************************************************************************
      * 
      *  TODO LIST APP
      *  
@@ -10,16 +9,15 @@ $(document).ready(function(){
      *  3. REMOVE TODO FROM THE LIST
      *  4. CHECK IF THEY ARE ALREADY COMPLETED OR NOT
      * 
-     * 
-    /**/
+    /*****************************************************************************/
 
     var toDoItems = [
         {
-            text: 'buy some fruits',
+            text: 'buy some food',
             completed: false,
         },
         {
-            text: 'buy some clothes',
+            text: 'buy some drink',
             completed: false,
         },
         {
@@ -31,7 +29,7 @@ $(document).ready(function(){
             completed: true,
         },
         {
-            text: 'go out for a walk to relax',
+            text: 'play some videogames',
             completed: false,
         },
     ];
@@ -51,7 +49,6 @@ $(document).ready(function(){
         item.find('.text').text(toDo.text);
 
         // CHECK IF COMPLETED
-
         if(toDo.completed) {
             item.find('.text').toggleClass('completed');
         }
@@ -63,8 +60,8 @@ $(document).ready(function(){
     // 2.
 
     newInput.keyup(function(e){
-        // check keycode on input
-        console.log(e.which);
+        // CHECK KEYCODE ON INPUT
+        // console.log(e.which);
 
         if(e.which === 13) {
             var text = newInput.val().trim();
@@ -76,6 +73,7 @@ $(document).ready(function(){
                 var item = template.clone();
                 item.find('.text').text(text);
                 list.append(item);
+
                 // RESET
                 newInput.val('');
             }
@@ -94,6 +92,18 @@ $(document).ready(function(){
         $(this).toggleClass('completed');
     })
 
+    // ADDING A BUTTON TO SHOW / HIDE TODO LIST
 
+    var btn = $('.btn');
+    var app = $('.app');
+    btn.click(function(){
+        app.toggle();
+        btn.text('Close TODO list');
+    });
+
+
+
+
+    
     // END OF DOC READY
 });
