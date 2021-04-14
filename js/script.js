@@ -98,12 +98,16 @@ $(document).ready(function(){
     var app = $('.app');
     btn.click(function(){
         app.toggle();
-        btn.text('Close TODO list');
+        if(btn.text() === 'Open TODO List') {
+            btn.text('Close TODO List');
+        } else {
+            btn.text('Open TODO List');
+        }
     });
 
 
 
 
-    
+
     // END OF DOC READY
 });
