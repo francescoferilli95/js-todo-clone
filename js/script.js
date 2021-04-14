@@ -51,11 +51,11 @@ $(document).ready(function(){
         item.find('.text').text(toDo.text);
 
         // CHECK IF COMPLETED
-        /* add later when styles will be done
+
         if(toDo.completed) {
             item.find('.text').toggleClass('completed');
         }
-        */
+
         // ADD TO THE LIST
         list.append(item);
     }
@@ -89,11 +89,11 @@ $(document).ready(function(){
     });
 
     // 4.
-    /* add later when styles will be done
+
     $('body').on('click', '.todos li .text', function(){
         $(this).toggleClass('completed');
     })
-    */
+
 
     // END OF DOC READY
 });
